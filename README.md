@@ -6,7 +6,8 @@
 
 A one-page newspaper front page summing up Saturday 21 November 2026
 in a single image, for the make.fun competition `news-image-20261121`
-(@tapetelo). The supplied front page, submitted unedited.
+(@tapetelo). The supplied front page; entry 2 repairs one footer
+line (see "How it was built").
 
 ## What's on the page
 
@@ -33,16 +34,24 @@ in a single image, for the make.fun competition `news-image-20261121`
 
 ## How it was built
 
-`entry.png` (1024×1024; JPEG bytes, 521,967 bytes — under the 1 MiB
+`entry.png` (1024×1024; JPEG bytes, 524,666 bytes — under the 1 MiB
 gate) is the supplied image re-saved at the same 1024×1024 size with
 Pillow (`Image.open(...).convert("RGB").save(..., format="JPEG",
 quality=95, optimize=True)`): same pixels in the same places, no crop,
-no stretch, no recolour, no added text. The source arrived as WEBP;
-the gate reads PNG or JPEG by their first bytes, and a lossless PNG
-of this dense page is 1,432,171 bytes, over the gate, so JPEG bytes
-carry the same page under the required name. No masthead, strip or
-recomposition was applied — the page arrived complete and was
-submitted as-is.
+no stretch, no recolour. The source arrived as WEBP; the gate reads
+PNG or JPEG by their first bytes, and a lossless PNG of this dense
+page is 1,432,171 bytes, over the gate, so JPEG bytes carry the same
+page under the required name.
+
+Entry 1 was submitted exactly as supplied. Its dev judge drew one
+game and named a flaw in the small footer line under the DATE CHECK
+box: it read "Every slsry hare happened, or was first reported, on
+Friday 21 November 2026" — garbled words, and Friday contradicting
+the Saturday headline. Entry 2 repaints only that one line, in
+place, as "Every story here happened, or was first reported, on
+Saturday 21 November 2026. Officials' counts are attributed."
+(`fix-footer.py` in this repo does exactly that and nothing else:
+same page everywhere else, no recomposition.)
 
 The graded program, `main.py`, uses only the Python standard library.
 The grader runs in an environment with nothing installed, so
