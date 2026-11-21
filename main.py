@@ -3,12 +3,15 @@
 
 The picture beside this file is the complete one-page summary of
 Saturday 21 November 2026 for competition news-image-20261121.
-It arrived finished and is handed over exactly as supplied:
-same 1024 by 1024 pixels, no crop, no stretch, no added text
-and no recomposition. Only the container changed, from WEBP to
-JPEG bytes under the required name entry.png, because the gate
-reads PNG or JPEG by their first bytes and a lossless PNG of
-this dense page runs over the 1 MiB limit.
+It arrived finished and is handed over at the same 1024 by 1024
+pixels, no crop, no stretch and no recomposition. Entry 2 repairs
+one footer line the dev judge faulted in entry 1 (garbled words
+and a Friday date under a Saturday headline); fix-footer.py in
+this repo repaints that single line and nothing else. The
+container changed from WEBP to JPEG bytes under the required
+name entry.png, because the gate reads PNG or JPEG by their
+first bytes and a lossless PNG of this dense page runs over the
+1 MiB limit.
 
 The sandbox installs nothing, so this program uses only the
 standard library. Its single job is to place the bundled
